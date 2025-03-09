@@ -1,0 +1,26 @@
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [ { name = "pylsp", except-features = [ "format" ] }, "ruff" ]
+
+[language-server.pylsp.config.pylsp.plugins]
+ruff.enabled = false
+autopep8.enabled = false
+flake8.enabled = false
+mccabe.enabled = false
+pycodestyle.enabled = false
+pyflakes.enabled = false
+pylint.enabled = false
+yapf.enabled = false
+
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
+
+[language-server.ruff.config.settings]
+line-length = 120
+
+[language-server.zls]
+command = "/home/mhalse/.local/bin/zls"
+config.zig_exe_path = "/home/mhalse/.zig/zig"
+
